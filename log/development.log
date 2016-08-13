@@ -322,3 +322,74 @@ Processing by CoursesController#index as JSON
   Rendered courses/_course.json.jbuilder (0.2ms)
   Rendered courses/index.json.jbuilder (6.7ms)
 Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/courses" for ::1 at 2016-08-11 14:38:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 288ms (Views: 276.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/scaffolds.self-8c31f5672ff56868416230318869364b1d05d8fb8c1ae7cf353660f62ec0d787.css?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-11 14:38:22 -0400
+
+
+Started GET "/courses/1" for ::1 at 2016-08-11 14:38:26 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered courses/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/courses" for ::1 at 2016-08-11 14:38:54 -0400
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/2" for ::1 at 2016-08-11 14:38:56 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered courses/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to FixColumnName (20160813145811)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "acourses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "map_url" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM "courses"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "acourses" ("id","name","map_url","description","created_at","updated_at") VALUES (1, 'Gabes Run', 'http://www.gabesrun.org/sites/all/themes/gabe/images/gabesrun5k.jpg', 'The course begins and ends in Patton Park and makes it’s way over 3.1 miles of open fields and beautiful wooded trails. The trail features moderate changes in elevations and features the steep ascent of Scilly’s hill around the 2 mile mark.', '2016-08-08 02:00:49.289144', '2016-08-08 02:00:49.289144')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "acourses" ("id","name","map_url","description","created_at","updated_at") VALUES (2, 'Stone Cat Trail Races', 'https://953aa33c-a-62cb3a1a-s-sites.googlegroups.com/site/stonecattrailraces/course/Stone%20Cat%20course%20map%202015.JPG', 'The course is a 12.5 mile trail loop, a mix of double track and single track trail, in Willowdale State Forest. The course is very runnable but has a lot of rocks and some sections contain many roots. The terrain is rolling.  There may be recently fallen leaves obscuring the footing.', '2016-08-08 04:04:48.501681', '2016-08-08 04:04:48.501681')
+  [1m[36m (1.4ms)[0m  [1mDROP TABLE "courses"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "map_url" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "acourses"[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "courses" ("id","name","map_url","description","created_at","updated_at") VALUES (1, 'Gabes Run', 'http://www.gabesrun.org/sites/all/themes/gabe/images/gabesrun5k.jpg', 'The course begins and ends in Patton Park and makes it’s way over 3.1 miles of open fields and beautiful wooded trails. The trail features moderate changes in elevations and features the steep ascent of Scilly’s hill around the 2 mile mark.', '2016-08-08 02:00:49.289144', '2016-08-08 02:00:49.289144')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "courses" ("id","name","map_url","description","created_at","updated_at") VALUES (2, 'Stone Cat Trail Races', 'https://953aa33c-a-62cb3a1a-s-sites.googlegroups.com/site/stonecattrailraces/course/Stone%20Cat%20course%20map%202015.JPG', 'The course is a 12.5 mile trail loop, a mix of double track and single track trail, in Willowdale State Forest. The course is very runnable but has a lot of rocks and some sections contain many roots. The terrain is rolling.  There may be recently fallen leaves obscuring the footing.', '2016-08-08 04:04:48.501681', '2016-08-08 04:04:48.501681')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "acourses"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160813145811"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
