@@ -393,3 +393,82 @@ Migrating to FixColumnName (20160813145811)
   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160813145811"]]
   [1m[35m (0.9ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-08-13 11:05:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (4.9ms)
+Completed 200 OK in 28ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for ::1 at 2016-08-13 11:05:13 -0400
+Processing by CoursesController#index as HTML
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/index.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `url' for #<Course:0x007f8c81684e20>):
+    16:     <% @courses.each do |course| %>
+    17:       <tr>
+    18:         <td><%= course.name %></td>
+    19:         <td><%= course.url %></td>
+    20:         <td><%= course.description %></td>
+    21:         <td><%= link_to 'Show', course %></td>
+    22:         <td><%= link_to 'Edit', edit_course_path(course) %></td>
+  app/views/courses/index.html.erb:19:in `block in _app_views_courses_index_html_erb__1199039429264004140_70120716604460'
+  app/views/courses/index.html.erb:16:in `_app_views_courses_index_html_erb__1199039429264004140_70120716604460'
+
+
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.4ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.6ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.4ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/gregkrathwohl/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.2ms)
+
+
+Started GET "/courses" for ::1 at 2016-08-13 11:06:30 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 263ms (Views: 262.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-8c31f5672ff56868416230318869364b1d05d8fb8c1ae7cf353660f62ec0d787.css?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-13 11:06:30 -0400
+
+
+Started GET "/courses.json" for ::1 at 2016-08-13 11:06:36 -0400
+Processing by CoursesController#index as JSON
+  [1m[35mCourse Load (0.1ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered courses/_course.json.jbuilder (0.8ms)
+  Rendered courses/_course.json.jbuilder (0.2ms)
+  Rendered courses/index.json.jbuilder (6.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
